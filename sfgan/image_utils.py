@@ -1,4 +1,5 @@
 import numpy as np
+import png
 import sys
 import cv2
 import os
@@ -155,21 +156,105 @@ def overlay(image1, image2, alpha):
     newImage = cv2.cvtColor(newImage, cv2.COLOR_BGR2RGB)
     return newImage
 
-''' Write Disparity in KITTI format'''
+
+# KITTI Optical Flow
+def kitti_flow_read():
+    """
+    Read KITTI optical flow, returns u,v,valid mask
+    """
+    if not has_png:
+        print('Error. Please install the PyPNG library')
+        return
+
+    R = png.Reader(fpath)
+    width,height,data,_ = R.asDirect()
+    I = np.array(map(lambda x:x,data)).reshape((height,width,3))
+    u_ = I[:,:,0]
+    v_ = I[:,:,1]
+    valid = I[:,:,2]
+
+    u = (u_.astype('float64')-2**15)/64.0
+    v = (v_.astype('float64')-2**15)/64.0
+
+    return u,v,valid
+
+def kitti_flow_Write(u,v,fpath,valid=None):
+    """
+    Write KITTI optical flow.
+    """
+    if not has_png:
+        print('Error. Please install the PyPNG library')
+        return
+
+
+    if valid==None:
+        valid_ = np.ones(u.shape,dtype='uint16')
+    else:
+        valid_ = valid.astype('uint16')
+
+
+    u = u.astype('float64')
+    v = v.astype('float64')
+
+    u_ = ((u*64.0)+2**15).astype('uint16')
+    v_ = ((v*64.0)+2**15).astype('uint16')
+
+    I = np.dstack((u_,v_,valid_))
+
+    W = png.Writer(width=u.shape[1],
+                   height=u.shape[0],
+                   bitdepth=16,
+                   planes=3)
+
+    with open(fpath,'wb') as fil:
+        W.write(fil,I.reshape((-1,3*u.shape[1])))
+
+# KITTI Disparity 
+def kitti_disp_read(file_name):
+    """
+    Read kitti disp from .png file
+    :param disp_file:
+    :return:
+    """
+    image_object = png.Reader(filename=file_name)
+    image_direct = image_object.asDirect()
+    image_data = list(image_direct[2])
+    (w, h) = image_direct[3]['size']
+    channel = len(image_data[0]) / w
+    flow = np.zeros((h, w, channel), dtype=np.uint16)
+    for i in range(len(image_data)):
+        for j in range(channel):
+            flow[i, :, j] = image_data[i][j::channel]
+    return flow[:, :, 0] / 256
+
 def kitti_disp_write(disp, filename):
+    """
+    Read KITTI disparity file in png format
+    :param disp: disparity matrix
+    :param filename: the flow file name to save
+    :return: None
+    """
+    f = open(filename, 'wb')
+    magic = np.array([202021.25], dtype=np.float32)
+    (height, width) = disp.shape[0:2]
+    w = np.array([width], dtype=np.int32)
+    h = np.array([height], dtype=np.int32)
+    empty_map = np.zeros((height, width), dtype=np.float32)
+    data = np.dstack((disp, empty_map))
+    magic.tofile(f)
+    w.tofile(f)
+    h.tofile(f)
+    data.tofile(f)
+    f.close()
 
-    im = disp*256
-    im[disp==0] = 1
-    im[im<0] = 0
-    im[im<65535] = 0
-    im = np.uint16(im)
-    cv2.imwrite(filename, im)
+#def kitti_disp_write(disp, filename):
 
-#  To Do 
-# def kitti_flow_write(flow, filename):
-    
-    
-    
+#    im = disp*256
+#    im[disp==0] = 1
+#    im[im<0] = 0
+#    im[im<65535] = 0
+#    im = np.uint16(im)
+#    cv2.imwrite(filename, im)
 
     
 
