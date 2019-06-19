@@ -167,8 +167,68 @@ def kitti_disp_write(disp, filename):
 
 #  To Do 
 # def kitti_flow_write(flow, filename):
-    
-    
+
+# KITTI Optical Flow
+def kitti_flow_read():
+    """
+    Read optical flow from KITTI .png file
+    :param flow_file: name of the flow file
+    :return: optical flow data in matrix
+    """
+    flow_object = png.Reader(filename=flow_file)
+    flow_direct = flow_object.asDirect()
+    flow_data = list(flow_direct[2])
+    (w, h) = flow_direct[3]['size']
+    planes = flow_direct[3]['planes']
+    flow = np.zeros((h, w, planes), dtype=np.float64)
+    custom = planes==2
+    for i in range(len(flow_data)):
+        flow[i, :, 0] = flow_data[i][0::planes]
+        flow[i, :, 1] = flow_data[i][1::planes]
+        if not custom:
+            flow[i, :, 2] = flow_data[i][2::planes]
+
+    flow[:, :, 0:2] = (flow[:, :, 0:2] - 2 ** 15) / precision
+    if not custom:
+        invalid_idx = (flow[:, :, 2] == 0)
+        flow[invalid_idx, 0] = 0
+        flow[invalid_idx, 1] = 0
+    return flow
+
+def kitti_flow_Write():
+    """
+    Write KITTI optical flow.
+    """
+    if not has_png:
+        print('Error. Please install the PyPNG library')
+        return
+
+
+    if valid==None:
+        valid_ = np.ones(u.shape,dtype='uint16')
+    else:
+        valid_ = valid.astype('uint16')
+
+
+    u = u.astype('float64')
+    v = v.astype('float64')
+
+    u_ = ((u*64.0)+2**15).astype('uint16')
+    v_ = ((v*64.0)+2**15).astype('uint16')
+
+    I = np.dstack((u_,v_,valid_))
+
+    W = png.Writer(width=u.shape[1],
+                   height=u.shape[0],
+                   bitdepth=16,
+                   planes=3)
+
+    with open(fpath,'wb') as fil:
+        W.write(fil,I.reshape((-1,3*u.shape[1])))
+
+# KITTI Disparity 
+def kitti_disp_read():
+       
     
 
     
