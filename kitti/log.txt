@@ -1,0 +1,28 @@
+0 - -0.427521824837 - inf
+0 - -0.243941038847 - inf
+<<<<<<< HEAD
+0 - -0.0847237408161 - inf
+1 - nan - inf
+2 - nan - inf
+3 - nan - inf
+4 - nan - inf
+5 - nan - inf
+6 - nan - inf
+7 - nan - inf
+0 - -0.423223569989 - inf
+1 - nan - inf
+2 - nan - inf
+3 - nan - inf
+4 - nan - inf
+5 - nan - inf
+6 - nan - inf
+7 - nan - inf
+0 - -0.384259544313 - inf
+1 - nan - inf
+2 - nan - inf
+3 - nan - inf
+0 - -0.499999998768 - inf
+1 - nan - inf
+2 - nan - inf
+=======
+>>>>>>> 0d02b8add7be8596f31aabff97bc962366126250
