@@ -1,9 +1,5 @@
 FROM nvidia/cuda:9.0-base-ubuntu16.04
 
-ENV http_proxy="http://19.12.1.40:83"
-ENV https_proxy="https://19.12.1.40:83"
-
-
 ## Python
 # Pick up some TF dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -60,7 +56,6 @@ RUN ${PIP} install \
         pypng==0.0.19 \
         tqdm 
         
-
 
 RUN apt-get install -y htpdate
 

@@ -10,7 +10,7 @@ from sfgan.utils import datagen
 from sfgan.image_utils import sceneflowconstruct, writePFM, readPFM
 
 from viz.visualization import resultssf
-from viz.ral import intro
+from viz.predict import predict_sceneflow
 
 def test():
 
@@ -37,7 +37,7 @@ def test():
 
     #resultssf(stereo_images, groundtruth_sceneflow, generated_sceneflow)
     #resultssf(groundtruth_sceneflow, generated_sceneflow)
-    intro(stereo_images, groundtruth_sceneflow, generated_sceneflow)
+    predict_sceneflow(stereo_images, groundtruth_sceneflow, generated_sceneflow)
 
 '''
     for i in range(3):

@@ -15,9 +15,11 @@ from sfgan.image_utils import overlay
 
 now = datetime.datetime.now()
 
-def intro(stereo_image, gt_sceneflow, gen_sceneflow):
+def predict_sceneflow(stereo_image, gt_sceneflow, gen_sceneflow):
 
-    ###### Gets the predicted and ground truth scene flow with stereo images
+    '''
+    Gets the predicted and ground truth scene flow with stereo images
+    '''
 
     optical_flow = gen_sceneflow[:, :, 0:3]  #
     disparity1   = gen_sceneflow[:, :, 3]    # Predictions
@@ -52,50 +54,6 @@ def intro(stereo_image, gt_sceneflow, gen_sceneflow):
     right_overlay = overlay(imR1, imR2, 0.5)
 
     ####### create subplot
-
-    '''
-    plt.figure()
-    G1 = gridspec.GridSpec(1, 2)
-    G1.update(left=0.05, right=0.48, wspace=0.05)
-
-    ax1 = plt.subplot(G1[0, 0])
-    ax1.axis('off')
-    ax1.imshow(left_overlay)
-  
-    ax2 = plt.subplot(G1[0, 1])
-    ax2.axis('off')
-    ax2.imshow(right_overlay)
-    
-    G2 = gridspec.GridSpec(2, 3)
-    G2.update(left=0.55, right=0.98, hspace=0.05)
-    ax3 = plt.subplot(G2[0,0])
-    ax3.axis('off')
-    ax3.imshow(gt_flow)
-
-    ax4 = plt.subplot(G2[0,1])
-    ax4.axis('off')
-    ax4.imshow(gt_disparity1, cmap='gray')
-
-    ax5 = plt.subplot(G2[0,2])
-    ax5.axis('off')
-    ax5.imshow(gt_disparity2, cmap='gray')
-
-    ax6 = plt.subplot(G2[1,0])
-    ax6.axis('off')
-    ax6.imshow(pred_flow)
-
-    ax7 = plt.subplot(G2[1,1])
-    ax7.axis('off')
-    ax7.imshow(disparity1, cmap='gray')
-
-    ax8 = plt.subplot(G2[1,2])
-    ax8.axis('off')
-    ax8.imshow(disparity2, cmap='gray')
-
-    plt.tight_layout()
-
-    plt.savefig('../samples/intro_{}_{}.png'.format(now.month, now.day), set_dpi=1000)
-    '''
 
     # Display the image
 
