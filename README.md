@@ -8,7 +8,7 @@ The code has been tested on Ubuntu 16.04 with CUDA 9.0
 
 [Ravi Kumar Thakur](https://ravikt.github.io/) and [Snehasis Mukherjee](https://sites.google.com/a/iiits.in/snehasis-mukherjee/)
 
-<img src="misc/SceneFLowGAN.jpg" width=300>
+<img src="misc/SceneFLowGAN.jpg" width="300">
 
 ## Requirements
 
