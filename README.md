@@ -8,15 +8,19 @@ The code has been tested on Ubuntu 16.04 with CUDA 9.0
 
 [Ravi Kumar Thakur](https://ravikt.github.io/) and [Snehasis Mukherjee](https://sites.google.com/a/iiits.in/snehasis-mukherjee/)
 
-<img src="misc/SceneFLowGAN.png" width=300>
+<img src="misc/SceneFLowGAN.jpg" width=300>
 
-# Requirements
+## Requirements
 
 Keras 2.1.4
 
 Opencv 3.3.1
 
-# Citation
+## Acknowledgement
+
+We would like to thank [Soumen Ghosh](https://sites.google.com/site/soumenca/) and [Shiv Ram Dubey](https://sites.google.com/site/shivram1987/) for providing support and insightful discussion.
+
+## Reference
 
 Please use the following for citation purpose
 
