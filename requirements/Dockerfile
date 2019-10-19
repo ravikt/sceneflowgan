@@ -32,10 +32,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
    apt-get clean && \
    rm -rf /var/lib/apt/lists/*
 
-ARG USE_PYTHON_3_NOT_2=True
-ARG _PY_SUFFIX=${USE_PYTHON_3_NOT_2:+3}
-ARG PYTHON=python${_PY_SUFFIX}
-ARG PIP=pip${_PY_SUFFIX}
+ARG USE_PYTHON_2_NOT_3=True
+ARG PYTHON=python
+ARG PIP=pip$
 
 RUN apt-get update && apt-get install -y \
    ${PYTHON} \
