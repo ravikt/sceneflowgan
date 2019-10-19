@@ -4,17 +4,17 @@ This repository contains Keras implementation of our paper
 
 A Conditional Adversarial Network for Scene Flow Estimation (RO-MAN 2019)
 
-The code has been tested on Ubuntu 16.04 with CUDA 9.0
-
 [Ravi Kumar Thakur](https://ravikt.github.io/) and [Snehasis Mukherjee](https://sites.google.com/a/iiits.in/snehasis-mukherjee/)
 
 <img src="misc/SceneFlowGAN.jpg" width="600">
 
 ## Requirements
 
-Keras 2.1.4
-
-Opencv 3.3.1
+The code has been tested on Ubuntu 16.04 with CUDA 9.0. Python2 and Keras are required. Relevant python libraries can installed (inside virtual environment) using: 
+```bash
+pip3 install -r requirements.txt
+```
+Alternatively, a docker image can be created for running SceneFlowGAN inside container. All the dependencies are included in the Dockerfile. 
 
 ## Acknowledgement
 
@@ -30,3 +30,8 @@ Please use the following for citation purpose
     journal={arXiv preprint arXiv:1904.11163},
     year={2019}
     }
+
+## Note
+
+In case of difficulty in running the code, please post your questions by opening issues. To suggest any improvement to make the code more readable or optimized, open a pull request. 
+
