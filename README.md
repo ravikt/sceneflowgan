@@ -18,7 +18,7 @@ Opencv 3.3.1
 
 ## Acknowledgement
 
-We would like to thank [Soumen Ghosh](https://sites.google.com/site/soumenca/) and [Shiv Ram Dubey](https://sites.google.com/site/shivram1987/) for providing support and insightful discussion.
+We would like to thank [Soumen Ghosh](https://sites.google.com/site/soumenca/) and [Shiv Ram Dubey](https://sites.google.com/site/shivram1987/) for providing feedback and insightful discussion. The work was supported by Department of Science and Technology, Government of India under Project ECR/2016/00652.
 
 ## Reference
 
