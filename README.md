@@ -1,10 +1,17 @@
 # SceneFlowGAN
 
-Code for SceneFlowGAN used in the following paper. The code has been tested on Ubuntu 16.04 with CUDA 9.0
-* "A Conditional Adversarial Network for Scene Flow Estimation" by
-Ravi Kumar Thakur and Snehasis Mukherjee
+This repository contains Keras implementation of our paper 
+
+A Conditional Adversarial Network for Scene Flow Estimation (RO-MAN 2019)
+
+The code has been tested on Ubuntu 16.04 with CUDA 9.0
+
+[Ravi Kumar Thakur](https://ravikt.github.io/) and [Snehasis Mukherjee](https://sites.google.com/a/iiits.in/snehasis-mukherjee/)
+
+<img src="misc/SceneFLowGAN.png" width="550">
 
 # Requirements
+
 Keras 2.1.4
 
 Opencv 3.3.1
