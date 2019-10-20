@@ -8,17 +8,21 @@ A Conditional Adversarial Network for Scene Flow Estimation (RO-MAN 2019)
 
 ## Abstract
 
+<div style="text-align: justify">
 The problem of Scene flow estimation in depth videos has been attracting attention of researchers of robot vision, due to its potential application in various areas of robotics. The conventional scene flow methods are difficult to use in reallife applications due to their long computational overhead. We propose a conditional adversarial network SceneFlowGAN for scene flow estimation. The proposed SceneFlowGAN uses loss function at two ends: both generator and descriptor ends. The proposed network is the first attempt to estimate scene flow using generative adversarial networks, and is able to estimate both the optical flow and disparity from the input stereo images simultaneously. The proposed method is experimented on a large RGB-D benchmark sceneflow dataset
+</div> 
 
 <img src="misc/SceneFlowGAN.jpg" width="600">
 
 ## Requirements
 
+### Virtual Environment
 The code has been tested on Ubuntu 16.04 with CUDA 9.0. Python2 and Keras are required. Relevant python libraries can installed (inside virtual environment) using: 
 ```bash
 pip3 install -r requirements.txt
 ```
-Alternatively, a docker image can be created for running SceneFlowGAN inside container. All the dependencies are included in the Dockerfile. 
+### Docker 
+Alternatively, a docker image can be created for running SceneFlowGAN inside a container. All the dependencies are included in the Dockerfile. 
 
 ## Acknowledgement
 
