@@ -16,12 +16,10 @@ The problem of Scene flow estimation in depth videos has been attracting attenti
 
 ## Requirements
 
-### Virtual Environment
 The code has been tested on Ubuntu 16.04 with CUDA 9.0. Python2 and Keras are required. Relevant python libraries can installed (inside virtual environment) using: 
 ```bash
 pip3 install -r requirements.txt
 ```
-### Docker 
 Alternatively, a docker image can be created for running SceneFlowGAN inside a container. All the dependencies are included in the Dockerfile. 
 
 ## Acknowledgement
