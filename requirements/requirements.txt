@@ -70,7 +70,6 @@ Pyste==0.9.10
 python-dateutil==2.7.0
 pytz==2018.3
 PyWavelets==0.5.2
-PyYAML==3.13
 pyzmq==17.0.0
 qtconsole==4.3.1
 reportlab==3.3.0
@@ -97,8 +96,4 @@ unity-lens-photos==1.0
 virtualenv==15.1.0
 virtualenv-clone==0.2.6
 virtualenvwrapper==4.8.2
-wcwidth==0.1.7
-webencodings==0.5.1
-Werkzeug==0.14.1
-widgetsnbextension==3.1.4
 wrapt==1.10.11
