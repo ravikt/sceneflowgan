@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
 
 
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/github/ravikt/sceneflowgan?style=plastic](https://lgtm.com/projects/g/ravikt/sceneflowgan/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/github/ravikt/sceneflowgan?style=plastic)](https://lgtm.com/projects/g/ravikt/sceneflowgan/)
 
 # SceneFlowGAN
 
