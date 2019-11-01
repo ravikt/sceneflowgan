@@ -1,4 +1,4 @@
-[![License: MIT](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
 
 # SceneFlowGAN
 
