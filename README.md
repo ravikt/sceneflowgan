@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
 
-<!---
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ucbdrive/3d-vehicle-tracking.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ucbdrive/3d-vehicle-tracking/context:python)
---->
+
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/github/ravikt/sceneflowgan?style=plastic](https://lgtm.com/projects/g/ravikt/sceneflowgan/)
+
 # SceneFlowGAN
 
 This repository contains Keras implementation of our paper 
