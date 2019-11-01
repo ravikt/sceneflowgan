@@ -2,11 +2,8 @@ import numpy as np
 import png
 import sys
 import cv2
-import os
 import re
-import uuid
 from scipy import misc
-from PIL import Image
 
 def writePFM(file, image, scale=1):
         
