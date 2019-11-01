@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/github/license/ravikt/sceneflowgan?style=plastic)](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
 
-<!---
+
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/github/ravikt/sceneflowgan?style=plastic)](https://lgtm.com/projects/g/ravikt/sceneflowgan/)
---->
+
 # SceneFlowGAN
 
 This repository contains Keras implementation of our paper 
