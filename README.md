@@ -1,4 +1,4 @@
-(https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
+[![License: MIT](https://github.com/ravikt/sceneflowgan/blob/master/LICENSE)
 
 # SceneFlowGAN
 
