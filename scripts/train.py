@@ -102,9 +102,9 @@ def train(epochs, train_folders):
                 d_loss = 0.5*d_loss_groundtruth + 0.5*d_loss_generated  
                 discriminator_losses.append(d_loss)
 
-                # Train generator only on discriminator's decidion and generated sceneflow
+                # Train generator only on discriminator's decision and generated sceneflow
                 discriminator.trainable = False
-                gan_loss = gan.train_on_batch(xtrain_images, [ytrain_sceneflow, y_real]) # IS THIS CORRECT ?
+                gan_loss = gan.train_on_batch(xtrain_images, [ytrain_sceneflow, y_real]) 
                 gan_losses.append(gan_loss)
                 discriminator.trainable = True
 
