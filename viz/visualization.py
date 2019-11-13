@@ -13,15 +13,10 @@ sys.path.append("/home/ravi/Desktop/sceneflow/generative_model/second_chapter")
 
 import datetime
 import numpy as np
-import cv2
 import matplotlib.pyplot as plt
 from viz.colorcode import flow_to_color
 
-from sfgan.image_utils import readPFM
-
-
 now = datetime.datetime.now()
-
 
 def results(stereo_image, gt_sceneflow, gen_sceneflow):
 

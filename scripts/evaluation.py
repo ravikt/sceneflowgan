@@ -3,14 +3,10 @@ sys.path.append("/home/ravi/Desktop/sceneflow/generative_model/second_chapter")
 
 
 import numpy as np
-import matplotlib.pyplot as plt
-
-from sfgan.model import create_generator, create_generatorBnormRes
+from sfgan.model import create_generatorBnormRes
 from sfgan.utils import datagen
 from sfgan.losses import eval_joint_loss
-from sfgan.image_utils import sceneflowconstruct, writePFM, readPFM
  
-
 def evaluate():
 
     folder_number = 150
@@ -19,12 +15,6 @@ def evaluate():
     d2_err = []
 
     generator = create_generatorBnormRes()
-    # C/118/generator_70_2.h5
-    # C/118/generator_50_3.h5
-    # C/117/generator_30_3.h5
-
-    # A/118/generator_70_10.h5
-    # A/117/generator_50_12.h5
 
     generator.load_weights('/media/ravi/Data/Results/ral/sfganC/117/generator_30_3.h5')
     

@@ -2,22 +2,16 @@ import sys
 sys.path.append("/home/ravi/Desktop/sceneflow/generative_model/second_chapter")
 
 from tqdm import tqdm
-import matplotlib.pyplot as plt 
 import numpy as np
 import os
 import datetime
-
-from keras import losses
 from keras import optimizers
 
 from keras.utils import multi_gpu_model, plot_model
 from keras.callbacks import ModelCheckpoint
 from keras.callbacks import History
 
-from keras.callbacks import ModelCheckpoint
-from keras.callbacks import History, TensorBoard
-
-from sfgan.model import create_generatorBnormRes, create_generator, \
+from sfgan.model import create_generatorBnormRes, \
         create_discriminator, get_gan_network
 from sfgan.utils import datagen
 from sfgan.image_utils import writePFM
@@ -71,11 +65,6 @@ def train(epochs, train_folders):
 
     y_fake = -np.ones((4,1))
     
- 
-    # Tensorboard callback
-    log_path = './logs'
-    tensorboard_callback = TensorBoard(log_path)
-
 
     for epoch in range(epochs):
 
@@ -113,9 +102,9 @@ def train(epochs, train_folders):
                 d_loss = 0.5*d_loss_groundtruth + 0.5*d_loss_generated  
                 discriminator_losses.append(d_loss)
 
-                # Train generator only on discriminator's decidion and generated sceneflow
+                # Train generator only on discriminator's decision and generated sceneflow
                 discriminator.trainable = False
-                gan_loss = gan.train_on_batch(xtrain_images, [ytrain_sceneflow, y_real]) # IS THIS CORRECT ?
+                gan_loss = gan.train_on_batch(xtrain_images, [ytrain_sceneflow, y_real]) 
                 gan_losses.append(gan_loss)
                 discriminator.trainable = True
 
