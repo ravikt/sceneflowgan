@@ -46,5 +46,5 @@ year={2019}
 ```
 ## Note
 
-In case of difficulty in running the code, please post your questions by opening issues. To suggest any improvement to make the code more readable or optimized, open a pull request. 
+In case of difficulty in running the code, please post your question by filing an issue. To suggest any improvement to make the code more readable or optimized, open a pull request. 
 
