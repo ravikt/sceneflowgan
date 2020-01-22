@@ -37,11 +37,13 @@ We would like to thank [Soumen Ghosh](https://sites.google.com/site/soumenca/) a
 
 Please use the following for citation purpose
 ```bibtex
-@article{thakur2019conditional,
-title={A Conditional Adversarial Network for Scene Flow Estimation},
-author={Thakur, Ravi Kumar and Mukherjee, Snehasis},
-journal={arXiv preprint arXiv:1904.11163},
-year={2019}
+@inproceedings{thakur2019conditional,
+  title={A conditional adversarial network for scene flow estimation},
+  author={Thakur, Ravi Kumar and Mukherjee, Snehasis},
+  booktitle={2019 28th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)},
+  pages={1--6},
+  year={2019},
+  organization={IEEE}
 }
 ```
 ## Note
