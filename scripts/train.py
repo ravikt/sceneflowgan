@@ -1,5 +1,4 @@
 import sys
-sys.path.append("/home/ravi/Desktop/sceneflow/generative_model/second_chapter")
 
 from tqdm import tqdm
 import numpy as np
