@@ -20,45 +20,7 @@ discriminator_input_dim = (384, 512, output_nc)
 # It will be trained via GAN
 # The Generator is a SceneEDNet, which takes pair 
 # of stereo images and outputs scene flow
-
-def create_generator():
-    
-    inimage = Input(shape=generator_input_dim)
-    conv0 = Conv2D(64,   (3, 3), name = 'conv0',   strides = 2, padding='same')(inimage)
-    conv0 = LeakyReLU()(conv0)
-    conv1 = Conv2D(128,  (3, 3), name = 'conv1', strides = 2, padding='same')(conv0)
-    conv1 = LeakyReLU()(conv1)
-    conv2 = Conv2D(256,  (3, 3), name = 'conv2', strides = 2, padding='same')(conv1)
-    conv2 = LeakyReLU()(conv2)
-    conv3 = Conv2D(512,  (3, 3), name = 'conv3', strides = 2, padding='same')(conv2)
-    conv3 = LeakyReLU()(conv3)
-    conv4 = Conv2D(1024, (3, 3), name = 'conv4', strides = 1, padding='same')(conv3)
-    conv4 = LeakyReLU()(conv4) 
-
-    conv5 = Conv2D(1024, (3, 3), name = 'conv5', strides = 1, padding='same')(conv4)
-    conv5 = LeakyReLU()(conv5)
-    up1   = UpSampling2D((2,2))(conv5)
-    conv6 = Conv2D(512, (3, 3), name = 'conv6', strides = 1, padding='same')(up1)
-    conv6 = LeakyReLU()(conv6)
-    up2   = UpSampling2D((2,2))(conv6)
-    conv7 = Conv2D(256, (3, 3), name = 'conv7', strides = 1, padding='same')(up2)
-    conv7 = LeakyReLU()(conv7)
-    up3   = UpSampling2D((2,2))(conv7)
-    conv8 = Conv2D(128, (3, 3), name = 'conv8', strides = 1, padding='same')(up3)
-    conv8 = LeakyReLU()(conv8)
-    up4   = UpSampling2D((2,2))(conv8)
-    #up4   = Cropping2D(cropping=((4,0),(0,0)))(up4)
-    conv9 = Conv2D(64, (3, 3), name = 'conv9', strides = 1, padding='same')(up4)
-    conv9 = LeakyReLU()(conv9)
-    outimage = Conv2D(output_nc, (3, 3), name = 'output', strides = 1, padding='same')(conv9)
-    #outimage = LeakyReLU()(outimage)
-
-    generator = Model(inputs=inimage, outputs=outimage, name='Generator')
-    # for multi-gpu
-    generator = multi_gpu_model(generator, gpus=2)
-    #generator.summary()
-
-    return generator 
+ 
 
 def create_generatorBnorm():
 
