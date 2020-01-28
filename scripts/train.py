@@ -20,7 +20,7 @@ learning_rate = 0.00001
 nEpoch        = 100
 train_set = 750# Number of training samples
 lrdecay       = learning_rate/nEpoch
-BASE_DIR = '/media/ravi/Data/Results/weights/'
+BASE_DIR = '/path/to/store/weights/'
 
 def get_optimizer():
     return optimizers.Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, 
