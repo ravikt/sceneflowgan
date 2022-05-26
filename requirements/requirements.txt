@@ -84,7 +84,7 @@ singledispatch==3.4.0.3
 six==1.11.0
 stevedore==1.28.0
 subprocess32==3.2.7
-tensorflow-gpu==1.15.2
+tensorflow-gpu==2.7.2
 tensorflow-tensorboard==1.5.1
 terminado==0.8.1
 testpath==0.3.1
