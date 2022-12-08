@@ -7,7 +7,7 @@ backports.shutil-get-terminal-size==1.0.0
 backports.weakref==1.0.post1
 beautifulsoup4==4.4.1
 bleach==3.1.4
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==2.3.0
 configparser==3.5.0
 cycler==0.10.0
